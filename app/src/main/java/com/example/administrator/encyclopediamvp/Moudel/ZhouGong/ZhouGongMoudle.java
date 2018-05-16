@@ -2,6 +2,7 @@ package com.example.administrator.encyclopediamvp.Moudel.ZhouGong;
 
 import com.example.administrator.encyclopediamvp.Bean.ZhouGongBean;
 import com.example.administrator.encyclopediamvp.IListener.ApiInterface;
+import com.example.administrator.encyclopediamvp.Moudel.IBaseMoudle;
 import com.example.administrator.encyclopediamvp.Util.RequestUtil;
 import com.example.administrator.encyclopediamvp.Util.StaticSetting;
 
@@ -21,10 +22,11 @@ import io.reactivex.schedulers.Schedulers;
  * 描述：
  */
 
-public class ZhouGongMoudle implements IZhouGongMoudle {
+public class ZhouGongMoudle implements IBaseMoudle {
     ArrayList<ZhouGongBean.ResultBean> arrayList ;
+
     @Override
-    public ArrayList<ZhouGongBean.ResultBean> getArrayList(String SerchKey) {
+    public ArrayList<?> ISerchKeyData(String SerchKey) {
         arrayList = new ArrayList<>();
         RequestUtil u = new RequestUtil();
         final ApiInterface apiInterface = u.getApi(StaticSetting.URL_ZHOUGONG);
@@ -55,5 +57,10 @@ public class ZhouGongMoudle implements IZhouGongMoudle {
                     }
                 });
         return arrayList;
+    }
+
+    @Override
+    public ArrayList<Object> INoSerchKeyData() {
+        return null;
     }
 }

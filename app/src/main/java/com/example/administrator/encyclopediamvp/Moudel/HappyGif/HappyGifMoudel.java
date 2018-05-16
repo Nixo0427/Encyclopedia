@@ -1,59 +1,46 @@
-package com.example.administrator.encyclopediamvp.Moudel.Express;
+package com.example.administrator.encyclopediamvp.Moudel.HappyGif;
 
-import android.util.Log;
-
-import com.example.administrator.encyclopediamvp.Bean.ExpressBean;
+import com.example.administrator.encyclopediamvp.Bean.HappyGifBean;
 import com.example.administrator.encyclopediamvp.IListener.ApiInterface;
 import com.example.administrator.encyclopediamvp.Moudel.IBaseMoudle;
 import com.example.administrator.encyclopediamvp.Util.RequestUtil;
 import com.example.administrator.encyclopediamvp.Util.StaticSetting;
-import com.example.administrator.encyclopediamvp.View.Express.IExpressView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**
  * 项目名：   EncyclopediaMVP
- * 包名 ：    com.example.administrator.encyclopediamvp.Moudel.Express
- * 文件名：   Express
+ * 包名 ：    com.example.administrator.encyclopediamvp.Moudel.HappyGif
+ * 文件名：   HappyGifMoudel
  * 创建者:    Nixo
- * 创建时间：  2018/5/15/015-15:36
+ * 创建时间：  2018/5/16/016-18:09
  * 描述：
  */
 
-public class  ExpressMoudle implements IBaseMoudle {
-
-    ArrayList<ExpressBean.ResultBean.ListBean> beans;
-    String error;
-
-
+public class HappyGifMoudel implements IBaseMoudle{
+    ArrayList<HappyGifBean.ShowapiResBodyBean.ContentlistBean> arrayList = new ArrayList<>();
     @Override
     public ArrayList<?> ISerchKeyData(String SerchKey) {
-        beans = new ArrayList<>() ;
-        Log.i("JSY", SerchKey);
-        RequestUtil requestUtil = new RequestUtil();
-        ApiInterface apiInterface = requestUtil.getApi(StaticSetting.URL_EXPRESS);
-        Log.i("JSY","执行了IExpressData");
-        apiInterface.Express(StaticSetting.KEY_EXPRESS,"auto",SerchKey)
+        RequestUtil util = new RequestUtil();
+        ApiInterface api = util.getApi(StaticSetting.URL_HAPPYGIF);
+        api.HappyGif(StaticSetting.APPID_HAPPYGIF,StaticSetting.KEY_HAPPYGIF,SerchKey)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .subscribe(new Observer<ExpressBean>() {
+                .subscribe(new Observer<HappyGifBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-
+                        
                     }
 
                     @Override
-                    public void onNext(ExpressBean expressBean) {
-                        for (int i = 0; i < expressBean.getResult().getList().size(); i++) {
-                            beans.add(expressBean.getResult().getList().get(i));
+                    public void onNext(HappyGifBean happyGifBean) {
+                        for (int i = 0; i < happyGifBean.getShowapi_res_body().getContentlist().size(); i++) {
+                            arrayList.add(happyGifBean.getShowapi_res_body().getContentlist().get(i));
                         }
                     }
 
@@ -67,8 +54,7 @@ public class  ExpressMoudle implements IBaseMoudle {
 
                     }
                 });
-
-        return beans;
+        return arrayList;
     }
 
     @Override

@@ -5,7 +5,8 @@ import android.util.Log;
 import com.example.administrator.encyclopediamvp.Bean.ExpressBean;
 import com.example.administrator.encyclopediamvp.IListener.ApiInterface;
 import com.example.administrator.encyclopediamvp.Moudel.Express.ExpressMoudle;
-import com.example.administrator.encyclopediamvp.Moudel.Express.IExpressMoudle;
+
+import com.example.administrator.encyclopediamvp.Moudel.IBaseMoudle;
 import com.example.administrator.encyclopediamvp.Util.RequestUtil;
 import com.example.administrator.encyclopediamvp.Util.StaticSetting;
 import com.example.administrator.encyclopediamvp.View.Express.IExpressView;
@@ -29,7 +30,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class ExpressPresenter  {
 
-    IExpressMoudle moudle;
+    IBaseMoudle moudle;
     IExpressView Iview;
     ArrayList<ExpressBean.ResultBean.ListBean> arrayList;
     public ExpressPresenter(IExpressView Iview){
@@ -39,7 +40,7 @@ public class ExpressPresenter  {
 
     public void SetData(String serchKey){
         Log.i("JSY", serchKey);
-        arrayList = moudle.IExpressData(serchKey);
+        arrayList = (ArrayList<ExpressBean.ResultBean.ListBean>) moudle.ISerchKeyData(serchKey);
         Log.i("JSY",arrayList.size()+"");
         Iview.SetRecy(arrayList);
     }

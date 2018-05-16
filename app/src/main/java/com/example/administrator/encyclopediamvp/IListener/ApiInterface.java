@@ -3,6 +3,7 @@ package com.example.administrator.encyclopediamvp.IListener;
 
 
 import com.example.administrator.encyclopediamvp.Bean.ExpressBean;
+import com.example.administrator.encyclopediamvp.Bean.HappyGifBean;
 import com.example.administrator.encyclopediamvp.Bean.ZhouGongBean;
 
 import io.reactivex.Observable;
@@ -42,5 +43,19 @@ public interface ApiInterface {
     Observable<ExpressBean> Express(@Query("appkey") String key,
                                     @Query("type") String type,
                                     @Query("number") String expressNum);
+
+
+    /**
+     * 福利|搞笑动图
+     * http://route.showapi.com/341-3?showapi_appid=65197&showapi_sign=7409d8eab2354fb89b030277fa6977a5&page=1
+     */
+
+
+
+    @GET("341-3?")
+    Observable<HappyGifBean> HappyGif(@Query("showapi_appid") String appid,
+                                      @Query("showapi_sign")String key,
+                                      @Query("page") String page);
+
 
 }
