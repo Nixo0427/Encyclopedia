@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.encyclopediamvp.View.BaseActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="#b4cff5"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <Button
+            android:id="@+id/back"
+            android:background="@mipmap/back"
+            android:layout_width="35dp"
+            android:layout_height="35dp" />
+        <TextView
+            android:id="@+id/titile"
+            android:layout_marginRight="5dp"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:text="搜索"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp" />
+    </android.support.v7.widget.Toolbar>
+</LinearLayout>

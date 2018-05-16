@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <android.support.v7.widget.Toolbar
+        toolbar:title=""
+        android:background="#a1caf1"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+
+        <Button
+            android:id="@+id/toolbar_back"
+            android:background="@mipmap/back"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="6dp"
+            android:id="@+id/toolbar_title"
+            android:textSize="18sp"
+            android:text="XXX"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp" />
+    </android.support.v7.widget.Toolbar>
+</LinearLayout>

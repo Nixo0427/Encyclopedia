@@ -1,7 +1,8 @@
 package com.example.administrator.encyclopediamvp.Presenter;
 
 import com.example.administrator.encyclopediamvp.Bean.ZhouGongBean;
-import com.example.administrator.encyclopediamvp.Moudel.ZhouGong.IZhouGongMoudle;
+import com.example.administrator.encyclopediamvp.Moudel.IBaseMoudle;
+
 import com.example.administrator.encyclopediamvp.Moudel.ZhouGong.ZhouGongMoudle;
 import com.example.administrator.encyclopediamvp.View.Express.IExpressView;
 import com.example.administrator.encyclopediamvp.View.ZhouGong.IZhouGongView;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 public class ZhouGongPresenter {
 
 
-    IZhouGongMoudle moudle;
+    IBaseMoudle moudle;
     ArrayList<ZhouGongBean.ResultBean> arrayList;
     IZhouGongView view;
     public ZhouGongPresenter(IZhouGongView iExpressView) {
@@ -29,7 +30,7 @@ public class ZhouGongPresenter {
     }
 
     public void SetRecy2(String serchkey){
-        arrayList = moudle.getArrayList(serchkey);
+        arrayList = (ArrayList<ZhouGongBean.ResultBean>) moudle.ISerchKeyData(serchkey);
         view.SetRecy(arrayList);
     }
 

@@ -13,6 +13,7 @@ import com.example.administrator.encyclopediamvp.IListener.MainRecyClickListen;
 import com.example.administrator.encyclopediamvp.Presenter.MainPresenter;
 import com.example.administrator.encyclopediamvp.R;
 import com.example.administrator.encyclopediamvp.View.Express.ExpressActivity;
+import com.example.administrator.encyclopediamvp.View.HappyGif.HappyGifActivity;
 import com.example.administrator.encyclopediamvp.View.ZhouGong.ZhouGongActivity;
 
 import java.util.ArrayList;
@@ -59,10 +60,19 @@ public class MainActivity extends AppCompatActivity implements IMainView , MainR
     public void MainRecyClickListener(String title) {
         switch (title){
             case "物流查询":
-                startActivity(new Intent(this, ExpressActivity.class));
+                Intent intent1 = new Intent(this, ExpressActivity.class);
+                intent1.putExtra("title",title);
+                startActivity(intent1);
                 break;
             case "周公解梦":
-                startActivity(new Intent(this, ZhouGongActivity.class));
+                Intent intent2 = new Intent(this, ZhouGongActivity.class);
+                intent2.putExtra("title",title);
+                startActivity(intent2);
+                break;
+            case "搞笑图片":
+                Intent intent3 = new Intent(this, HappyGifActivity.class);
+                intent3.putExtra("title",title);
+                startActivity(intent3);
                 break;
         }
     }
