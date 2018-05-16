@@ -9,7 +9,7 @@
         <EditText
             android:id="@+id/serch_input"
             android:gravity="center"
-            android:hint="请输入关键字"
+            android:hint="请输入"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
