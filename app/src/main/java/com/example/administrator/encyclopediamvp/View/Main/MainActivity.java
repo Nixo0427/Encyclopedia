@@ -14,6 +14,7 @@ import com.example.administrator.encyclopediamvp.Presenter.MainPresenter;
 import com.example.administrator.encyclopediamvp.R;
 import com.example.administrator.encyclopediamvp.View.Express.ExpressActivity;
 import com.example.administrator.encyclopediamvp.View.HappyGif.HappyGifActivity;
+import com.example.administrator.encyclopediamvp.View.LucklyQQ.LucklyQQActivity;
 import com.example.administrator.encyclopediamvp.View.ZhouGong.ZhouGongActivity;
 
 import java.util.ArrayList;
@@ -73,6 +74,11 @@ public class MainActivity extends AppCompatActivity implements IMainView , MainR
                 Intent intent3 = new Intent(this, HappyGifActivity.class);
                 intent3.putExtra("title",title);
                 startActivity(intent3);
+                break;
+            case "QQ号运势":
+                Intent intent4 = new Intent(this, LucklyQQActivity.class);
+                intent4.putExtra("title",title);
+                startActivity(intent4);
                 break;
         }
     }

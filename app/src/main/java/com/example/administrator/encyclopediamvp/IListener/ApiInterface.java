@@ -4,6 +4,7 @@ package com.example.administrator.encyclopediamvp.IListener;
 
 import com.example.administrator.encyclopediamvp.Bean.ExpressBean;
 import com.example.administrator.encyclopediamvp.Bean.HappyGifBean;
+import com.example.administrator.encyclopediamvp.Bean.LuckyQQBean;
 import com.example.administrator.encyclopediamvp.Bean.ZhouGongBean;
 
 import io.reactivex.Observable;
@@ -57,5 +58,15 @@ public interface ApiInterface {
                                       @Query("showapi_sign")String key,
                                       @Query("page") String page);
 
+
+    /**
+     *
+     *QQ号测运势
+     * https://route.showapi.com/863-1?qq=1649883744&showapi_appid=65197&showapi_sign=7409d8eab2354fb89b030277fa6977a5
+     */
+    @GET("863-1?")
+    Observable<LuckyQQBean> LuckQQ(@Query("qq")String QQ,
+                                   @Query("showapi_appid")String appid,
+                                   @Query("showapi_sign")String key);
 
 }

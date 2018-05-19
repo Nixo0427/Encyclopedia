@@ -21,12 +21,14 @@ public class MainMoudel implements IMainMoudel {
         MainAdapterBean bean = new MainAdapterBean(R.mipmap.jiemeng,"周公解梦");
         MainAdapterBean bean1 = new MainAdapterBean(R.mipmap.express1,"物流查询");
         MainAdapterBean bean2 = new MainAdapterBean(R.mipmap.happygif,"搞笑图片");
+        MainAdapterBean bean3 = new MainAdapterBean(R.mipmap.qq,"QQ号运势");
 
 
         ArrayList<MainAdapterBean> adapterBeans = new ArrayList<>();
         adapterBeans.add(bean);
         adapterBeans.add(bean1);
         adapterBeans.add(bean2);
+        adapterBeans.add(bean3);
         isetArrayList.setMainArrayList(adapterBeans);
     }
 }

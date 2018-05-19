@@ -21,7 +21,8 @@
         <activity android:name=".View.Express.ExpressActivity" />
         <activity android:name=".View.ZhouGong.ZhouGongActivity" />
         <activity android:name=".View.HappyGif.HappyGifActivity" />
-        <activity android:name=".View.BaseActivity"></activity>
+
+        <activity android:name=".View.LucklyQQ.LucklyQQActivity"></activity>
     </application>
 
 </manifest>

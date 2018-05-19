@@ -14,5 +14,5 @@ import java.util.List;
 
 public interface IBaseMoudle {
     ArrayList<?> ISerchKeyData(String SerchKey);
-    ArrayList<Object> INoSerchKeyData();
+    ArrayList<?> INoSerchKeyData();
 }

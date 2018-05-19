@@ -22,7 +22,17 @@ public class StaticSetting {
     public static final String URL_EXPRESS = "http://api.jisuapi.com/express/";
     public static final String KEY_EXPRESS = "66ef62163408fcbb" ;
     //福利搞笑动图
+    /*
+    showAPI通用Key & Url，
+    1.QQ号运势，
+    2.福利动图
+     */
     public static final String URL_HAPPYGIF = "http://route.showapi.com/";
     public static final String APPID_HAPPYGIF = "65197";
     public static final String KEY_HAPPYGIF = "7409d8eab2354fb89b030277fa6977a5";
+
+
+// https://route.showapi.com/
+// showapi_appid=     65197
+// showapi_sign=  7409d8eab2354fb89b030277fa6977a5
 }

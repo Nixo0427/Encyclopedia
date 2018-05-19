@@ -1,5 +1,7 @@
 package com.example.administrator.encyclopediamvp.Moudel.HappyGif;
 
+import android.util.Log;
+
 import com.example.administrator.encyclopediamvp.Bean.HappyGifBean;
 import com.example.administrator.encyclopediamvp.IListener.ApiInterface;
 import com.example.administrator.encyclopediamvp.Moudel.IBaseMoudle;
@@ -26,6 +28,7 @@ public class HappyGifMoudel implements IBaseMoudle{
     ArrayList<HappyGifBean.ShowapiResBodyBean.ContentlistBean> arrayList = new ArrayList<>();
     @Override
     public ArrayList<?> ISerchKeyData(String SerchKey) {
+        synchronized (arrayList){
         RequestUtil util = new RequestUtil();
         ApiInterface api = util.getApi(StaticSetting.URL_HAPPYGIF);
         api.HappyGif(StaticSetting.APPID_HAPPYGIF,StaticSetting.KEY_HAPPYGIF,SerchKey)
@@ -39,9 +42,12 @@ public class HappyGifMoudel implements IBaseMoudle{
 
                     @Override
                     public void onNext(HappyGifBean happyGifBean) {
+                        Log.i("JSY", "onNext: 执行了");
                         for (int i = 0; i < happyGifBean.getShowapi_res_body().getContentlist().size(); i++) {
                             arrayList.add(happyGifBean.getShowapi_res_body().getContentlist().get(i));
+                            Log.i("JSY", happyGifBean.getShowapi_res_body().getContentlist().get(i).getCt()+"");
                         }
+
                     }
 
                     @Override
@@ -54,7 +60,9 @@ public class HappyGifMoudel implements IBaseMoudle{
 
                     }
                 });
+        Log.i("JSY", "外面执行了");
         return arrayList;
+        }
     }
 
     @Override

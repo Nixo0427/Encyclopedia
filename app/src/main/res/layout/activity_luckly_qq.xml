@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.encyclopediamvp.View.LucklyQQ.LucklyQQActivity">
+
+    <include layout="@layout/include_back"/>
+    <include layout="@layout/layout_serch"/>
+
+
+    <LinearLayout
+        android:layout_marginLeft="50dp"
+        android:padding="3dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:id="@+id/Luck_QQNum"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:id="@+id/Luck_QQScore"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:id="@+id/Luck_QQgrade"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:id="@+id/Luck_QQdesc"
+            android:text=""
+            android:layout_width="270dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:id="@+id/Luck_QQanalysis"
+            android:text=""
+            android:layout_width="270dp"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
